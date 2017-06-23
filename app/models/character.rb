@@ -12,7 +12,7 @@ class Character < ApplicationRecord
   end
 
   def self.random_name
-    name_generator.generate(with_surname: true, min_freq: 90, max_freq: 100)
+    name_generator.generate(with_surname: false, min_freq: 80, max_freq: 100)
   end
 
   def add_attributes!
