@@ -1,0 +1,18 @@
+.container.col-xs-12
+  .row Your party encountered a #{hunt.monster.name}
+  .row The battle lasted #{pluralize(hunt.battle_rounds.count, 'round')}
+  - hunt.battle_rounds.each do |battle_round|
+    h6.row Round #{battle_round.number}
+    - battle_round.battle_actions.each do |battle_action|
+      .row.clearfix class=battle_action.actor_type.downcase
+        = display_battle_action(battle_action)
+
+  .row
+    - if hunt.victorious?
+      | Your party was victorious.
+    - elsif hunt.defeated?
+      | Your party was defeated. Come back another time.
+    - else
+      | Your party didn't manage to finish off, the monster escaped.
+
+hr

@@ -1,0 +1,13 @@
+.row
+  .col-sm-3
+    = form_for @new_hunt do |f|
+      = f.hidden_field :hunt_type, value: 'mob'
+      = f.submit 'Monster Hunt', class: 'btn btn-primary hunt-btn'
+    = form_for @new_hunt do |f|
+      = f.hidden_field :hunt_type, value: 'boss'
+      = f.submit 'Bounty Hunt', class: 'btn btn-warning hunt-btn'
+  .col-sm-9
+    - if @hunt.persisted?
+      = render partial: 'hunts/hunt', object: @hunt
+    - else
+      p Welcome to the game, press hunt on the left side to start your adventure

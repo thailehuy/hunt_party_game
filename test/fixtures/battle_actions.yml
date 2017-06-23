@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  actor: 
+  battle_action_type: one
+  value: 1
+  target: 
+
+two:
+  actor: 
+  battle_action_type: two
+  value: 1
+  target: 

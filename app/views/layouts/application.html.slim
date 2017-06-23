@@ -1,0 +1,28 @@
+| <!DOCTYPE html>
+html
+  head
+    title= page_title
+
+    meta name="keywords" content=seo_keywords
+    meta name="description" content=seo_description
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+
+
+  body.gray-scale
+    nav.navbar.navbar-fixed-top.form-inline
+      .btn-group.input-group role='group'
+        - if current_player
+          = link_to 'Home', root_path
+        - else
+          = link_to 'Log in', new_player_session_path, class: 'btn btn-info nav-btn'
+          = link_to 'Sign up', new_player_registration_path, class: 'btn btn-info nav-btn'
+
+    .container
+      = yield
+
+    footer
+      | Free for all

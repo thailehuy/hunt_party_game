@@ -1,0 +1,2 @@
+class CharacterSlot < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class MonsterLoot < ApplicationRecord
+end

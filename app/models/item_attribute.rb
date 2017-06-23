@@ -1,0 +1,2 @@
+class ItemAttribute < ApplicationRecord
+end
