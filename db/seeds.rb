@@ -1,3 +1,4 @@
 CharacterClass.create_defaults
 Location.create_defaults
 AttributeType.create_defaults
+Trait.create_defaults

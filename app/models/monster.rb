@@ -13,6 +13,10 @@ class Monster < ApplicationRecord
 
   attr_accessor :stats
 
+  def stats
+    @stats || base_stats
+  end
+
   def base_stats
     @_base_stats ||= OpenStruct.new(
         health: 0,

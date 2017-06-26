@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170623045942) do
+ActiveRecord::Schema.define(version: 20170626043718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -224,6 +224,8 @@ ActiveRecord::Schema.define(version: 20170623045942) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "character_class_id", null: false
+    t.index ["character_class_id"], name: "index_slots_on_character_class_id"
   end
 
   create_table "traits", force: :cascade do |t|
@@ -280,6 +282,7 @@ ActiveRecord::Schema.define(version: 20170623045942) do
   add_foreign_key "monsters", "monster_classes"
   add_foreign_key "parties", "locations"
   add_foreign_key "parties", "players"
+  add_foreign_key "slots", "character_classes"
   add_foreign_key "traits", "attribute_types"
   add_foreign_key "traits", "character_classes"
 end

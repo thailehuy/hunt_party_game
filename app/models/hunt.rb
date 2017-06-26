@@ -36,9 +36,11 @@ class Hunt < ApplicationRecord
     monster.is_boss?
   end
 
-  def simulate_battle
-    max_rounds = boss_battle? ? 10 : 5
+  def max_rounds
+    boss_battle? ? 10 : 5
+  end
 
+  def simulate_battle
     monster.calculate_stats
     party.characters.map(&:calculate_stats)
 

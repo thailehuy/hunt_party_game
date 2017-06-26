@@ -4,8 +4,14 @@ class Character < ApplicationRecord
   has_many :character_attributes, dependent: :destroy
   has_many :character_traits, dependent: :destroy
   has_many :traits, through: :character_traits
+  has_many :character_slots
+  has_many :slots, through: :character_slots
 
   attr_accessor :stats
+
+  def stats
+    @stats || base_stats
+  end
 
   def self.name_generator
     @_name_generator ||= Namey::Generator.new
