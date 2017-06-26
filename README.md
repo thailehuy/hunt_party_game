@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a fun side project I do in my free time.
 
-Things you may want to cover:
+It is mostly to realize my fantasy in a game, it might not be any good at all, but still it's mine.
 
-* Ruby version
+ I try to use good design and provide adequate specs for the code as a demonstration of my expertise
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ If you have any idea or inquiry, feel free to drop me an email to thailehuy@gmail.com or just open an issue here
