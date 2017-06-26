@@ -12,7 +12,7 @@ class Character < ApplicationRecord
   end
 
   def self.random_name
-    name_generator.generate(with_surname: false, min_freq: 80, max_freq: 100)
+    name_generator.generate(with_surname: false, min_freq: 85, max_freq: 100)
   end
 
   def add_attributes!
@@ -45,7 +45,9 @@ class Character < ApplicationRecord
   def calculate_stats
     traits.includes(:attribute_type).each do |trait|
       affected_stat = trait.attribute_type.name.downcase.gsub(' ', '_').to_sym
-      base_stats[affected_stat] = base_stats[affected_stat] + trait.value
+      if base_stats[affected_stat]
+        base_stats[affected_stat] = base_stats[affected_stat] + trait.value
+      end
     end
 
     self.stats = base_stats
